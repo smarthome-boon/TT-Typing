@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TT Typing — Thai & English Typing Adventure</title>
+<style>
+:root{--ink:#24304a;--muted:#71809b;--bg:#f4f7ff;--card:#fff;--purple:#7357e8;--blue:#4b9cf5;--mint:#36c6a0;--yellow:#ffca55;--pink:#ff7eaa;--line:#e7ebf5;--shadow:0 12px 34px rgba(44,61,110,.09)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif}
+button,input{font:inherit}button{cursor:pointer;border:0}.app{max-width:1180px;margin:auto;padding:22px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}.brand{display:flex;align-items:center;gap:12px}.logo{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,#8b72f3,#4ba9f5);display:grid;place-items:center;color:white;font-size:25px;box-shadow:var(--shadow)}h1{font-size:22px;margin:0}.tagline{font-size:12px;color:var(--muted);margin-top:3px}.top-actions{display:flex;gap:8px;flex-wrap:wrap}.btn{padding:10px 15px;border-radius:12px;font-weight:750;background:#edf0fb;color:var(--ink)}.btn.primary{background:var(--purple);color:white}.btn.small{padding:8px 11px;font-size:13px}.hero{background:linear-gradient(115deg,#7357e8,#559cf3);border-radius:24px;color:#fff;padding:25px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;box-shadow:var(--shadow);margin-bottom:20px}.hero h2{font-size:25px;margin:0 0 7px}.hero p{margin:0;color:#eeeaff;max-width:620px;line-height:1.5}.mascot{font-size:65px;flex-shrink:0}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:20px}.stat,.panel,.lesson-card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.stat{padding:15px 17px}.stat .label{font-size:12px;color:var(--muted);font-weight:700}.stat .value{font-size:25px;font-weight:850;margin-top:5px}.stat .emoji{float:right;font-size:23px}.layout{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.panel{padding:20px}.panel h3{margin:0 0 14px;font-size:17px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}.section-head h3{margin:0}.week{margin-bottom:17px}.week-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;font-weight:800}.week-title span:last-child{font-size:12px;color:var(--muted);font-weight:650}.lesson-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.lesson-card{padding:12px;text-align:left;box-shadow:none;transition:.15s;border:2px solid var(--line);background:#fff;color:var(--ink);min-height:106px}.lesson-card:hover{transform:translateY(-2px);border-color:#b6a9fa}.lesson-card.active{border-color:var(--purple);background:#f7f4ff}.lesson-card.done{border-color:#9de5d2;background:#f2fffa}.lesson-card:disabled{opacity:.5;cursor:not-allowed}.lesson-card .num{font-size:11px;color:var(--muted);font-weight:800}.lesson-card .lesson-name{font-size:13px;font-weight:800;margin:6px 0}.lesson-card .lesson-meta{font-size:11px;color:var(--muted)}.pill{display:inline-block;padding:3px 7px;border-radius:20px;background:#f0edff;color:#6950d4;font-size:10px;font-weight:800}.progress-track{height:9px;border-radius:10px;background:#edf0f7;overflow:hidden;margin-top:10px}.progress-fill{height:100%;background:linear-gradient(90deg,var(--mint),#8ce0ca);border-radius:10px;width:0;transition:width .3s}.muted{color:var(--muted)}.small-text{font-size:12px}.practice{margin-top:18px}.practice-top{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.mode-tabs{display:flex;gap:7px}.mode-tabs button{background:#eff2fa;color:var(--muted);padding:8px 13px;border-radius:10px;font-weight:800}.mode-tabs button.active{background:#ece7ff;color:#644bd1}.prompt{background:#f7f8ff;border:1px dashed #cdd4ea;border-radius:16px;padding:19px;margin:14px 0}.prompt-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:850}.target{font-size:clamp(23px,3vw,34px);font-weight:850;line-height:1.65;margin-top:8px;overflow-wrap:anywhere}.target .correct{color:#22a783}.target .wrong{color:#e65c77;background:#ffe6ed;border-radius:4px}.target .pending{color:#aab3c7}.typing-input{width:100%;padding:15px;border:2px solid #dfe4f2;border-radius:14px;outline:none;font-size:20px;line-height:1.5;color:var(--ink);background:#fff}.typing-input:focus{border-color:#9a87f3;box-shadow:0 0 0 4px #eeeaff}.typing-input[disabled]{background:#f4f6fa}.exercise-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.feedback{min-height:25px;font-size:13px;font-weight:750;margin-top:10px}.history{max-height:270px;overflow:auto}.history-row{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);gap:10px}.history-row:last-child{border:0}.history-name{font-weight:800;font-size:13px}.history-detail{font-size:11px;color:var(--muted);margin-top:3px}.score{font-weight:850;color:#5f4bd0;white-space:nowrap}.empty{padding:22px 8px;text-align:center;color:var(--muted);font-size:13px}.parent-panel{margin-top:18px}.parent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.parent-item{background:#f7f8fd;border-radius:13px;padding:13px}.parent-item strong{display:block;font-size:20px}.parent-item span{font-size:11px;color:var(--muted)}footer{text-align:center;color:var(--muted);font-size:11px;padding:24px 0 8px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#24304a;color:#fff;padding:12px 18px;border-radius:12px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.2s;z-index:10}.toast.show{opacity:1}.modal-backdrop{position:fixed;inset:0;background:#17213b88;display:none;align-items:center;justify-content:center;padding:16px;z-index:5}.modal-backdrop.show{display:flex}.modal{background:white;border-radius:22px;padding:24px;max-width:470px;width:100%;box-shadow:var(--shadow)}.modal h2{margin:0 0 8px}.modal p{color:var(--muted);line-height:1.5}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.hero{padding:20px}.mascot{font-size:48px}}
+@media(max-width:480px){.app{padding:13px}.lesson-grid{grid-template-columns:repeat(2,1fr)}header{align-items:flex-start}.top-actions{justify-content:flex-end}.top-actions .btn{font-size:12px;padding:8px}.hero h2{font-size:21px}.mascot{font-size:38px}.parent-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+ <div class="brand"><div class="logo">⌨️</div><div><h1>TT Typing</h1><div class="tagline">Little fingers, big typing adventures!</div></div></div>
+ <div class="top-actions"><button class="btn small" id="exportBtn">⬇ Export progress</button><button class="btn small" id="parentBtn">👨‍👩‍👧 Parent view</button></div>
+</header>
+<section class="hero">
+ <div><h2>Ready to become a typing star? ⭐</h2><p>Practice a little, learn a lot! Follow the 4-week adventure in English and Thai. Your progress saves automatically on this device.</p></div><div class="mascot">🦊</div>
+</section>
+<section class="stats">
+ <div class="stat"><span class="emoji">🏆</span><div class="label">TOTAL STARS</div><div class="value" id="starsStat">0</div></div>
+ <div class="stat"><span class="emoji">📚</span><div class="label">LESSONS COMPLETED</div><div class="value" id="doneStat">0/12</div></div>
+ <div class="stat"><span class="emoji">🎯</span><div class="label">BEST ACCURACY</div><div class="value" id="accuracyStat">—</div></div>
+ <div class="stat"><span class="emoji">🔥</span><div class="label">PRACTICE DAYS</div><div class="value" id="daysStat">0</div></div>
+</section>
+<div class="layout">
+ <main>
+  <section class="panel">
+   <div class="section-head"><h3>🗺️ Your 4-week adventure</h3><span class="pill">12 lessons</span></div>
+   <div id="curriculum"></div>
+  </section>
+  <section class="panel practice">
+   <div class="practice-top"><div><h3 id="lessonHeading">Choose your first lesson!</h3><div class="small-text muted" id="lessonSub">Complete a lesson to earn stars.</div></div>
+    <div class="mode-tabs"><button id="englishTab" class="active">🇬🇧 English</button><button id="thaiTab">🇹🇭 ไทย</button></div>
+   </div>
+   <div class="prompt"><div class="prompt-label">Type this exactly</div><div class="target" id="targetText">Choose a lesson above to begin ✨</div></div>
+   <input class="typing-input" id="typingInput" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Click here and start typing…" disabled>
+   <div class="progress-track"><div class="progress-fill" id="typingProgress"></div></div>
+   <div class="small-text muted" id="liveStats">Accuracy: — · Speed: — · Time: 0:00</div>
+   <div class="exercise-actions"><button class="btn primary" id="finishBtn" disabled>Finish lesson ✓</button><button class="btn" id="resetBtn" disabled>↻ Try again</button><button class="btn" id="hintBtn" disabled>💡 Hint</button></div>
+   <div class="feedback" id="feedback" aria-live="polite"></div>
+  </section>
+ </main>
+ <aside>
+  <section class="panel">
+   <div class="section-head"><h3>📈 My learning progress</h3></div>
+   <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:800"><span>Course completion</span><span id="coursePercent">0%</span></div>
+   <div class="progress-track"><div class="progress-fill" id="courseProgress"></div></div>
+   <p class="small-text muted" style="line-height:1.6">Recommended routine: 2–3 practice days each week, around 10–15 minutes per session. Take breaks and celebrate every improvement!</p>
+   <div style="background:#fff8e8;border-radius:13px;padding:13px;font-size:12px;line-height:1.6">🌟 <strong>Typing tip:</strong> Sit comfortably, keep your eyes on the screen, and use gentle fingers. Accuracy comes before speed.</div>
+  </section>
+  <section class="panel" style="margin-top:18px">
+   <div class="section-head"><h3>🕘 Recent practice</h3><button class="btn small" id="allHistoryBtn">View all</button></div>
+   <div class="history" id="historyList"><div class="empty">Your practice history will appear here. Start a lesson to begin!</div></div>
+  </section>
+ </aside>
+</div>
+<section class="panel parent-panel" id="parentPanel" hidden>
+ <div class="section-head"><h3>👨‍👩‍👧 Parent dashboard</h3><button class="btn small" id="hideParentBtn">Close</button></div>
+ <div class="parent-grid">
+  <div class="parent-item"><strong id="parentSessions">0</strong><span>Practice sessions</span></div>
+  <div class="parent-item"><strong id="parentMinutes">0</strong><span>Minutes practiced</span></div>
+  <div class="parent-item"><strong id="parentAverage">—</strong><span>Average accuracy</span></div>
+ </div>
+ <p class="small-text muted" style="line-height:1.6">Progress is stored in this browser on this device. Use “Export progress” to save a backup file. Importing a backup is available by selecting a previously exported JSON file.</p>
+ <div class="exercise-actions"><button class="btn" id="importBtn">⬆ Import backup</button><button class="btn" id="resetDataBtn">Reset all progress</button><input type="file" id="importFile" accept="application/json" hidden></div>
+</section>
+<footer>Made for curious young learners · TT Typing saves progress on this device · Keep practicing and have fun! 🦊</footer>
+</div>
+<div class="toast" id="toast"></div>
+<div class="modal-backdrop" id="resultModal"><div class="modal"><div style="font-size:40px">🎉</div><h2 id="resultTitle">Great work!</h2><p id="resultText"></p><div class="modal-actions"><button class="btn primary" id="closeResult">Keep learning</button></div></div></div>
+<script>
+const lessons = [
+ {week:1,title:"Meet the keys",level:"Beginner",en:["asdf jkl;","f d s a   j k l ;","I can type!"],th:["ฟ ห ก ด ่ า ส ว","ฟหกด่าสว","ฉันพิมพ์ได้"]},
+ {week:1,title:"Home row heroes",level:"Beginner",en:["sad dad asks","all fall as lads","a flask of water"],th:["กาดา กา","ดาว ฟ้า","ดอกไม้ สวย"]},
+ {week:1,title:"Easy words",level:"Beginner",en:["cat dog sun fun","I see a big red sun.","My cat is soft."],th:["แมว หมา ปลา","ฉันรักแมว","วันนี้ อากาศ ดี"]},
+ {week:2,title:"Short sentences",level:"Growing",en:["The sun is warm.","I like to play.","We can learn together."],th:["ฉัน ชอบ อ่าน","แมว กิน ปลา","เรา เรียน ด้วยกัน"]},
+ {week:2,title:"Numbers and names",level:"Growing",en:["I have 3 blue pens.","Ben has 2 happy dogs.","There are 5 stars."],th:["ฉัน มี แมว 2 ตัว","บ้าน ของ ฉัน","วันนี้ วัน จันทร์"]},
+ {week:2,title:"Punctuation fun",level:"Growing",en:["Hello, friend!","Can you help me?","Yes, I can. Thank you!"],th:["สวัสดี เพื่อน ๆ","เธอ สบายดี ไหม","ฉัน ชอบ เรียน ภาษาไทย"]},
+ {week:3,title:"Longer sentences",level:"Confident",en:["My family likes to eat dinner together.","A little practice makes me better every day.","I can type carefully and have fun."],th:["ฉัน ฝึก พิมพ์ ทุก วัน","ครอบครัว ของ ฉัน ใจดี","การ ฝึกฝน ทำให้ เก่งขึ้น"]},
+ {week:3,title:"Space explorer",level:"Confident",en:["The rocket flies past the bright moon.","Stars sparkle in the dark night sky.","An astronaut explores a new planet."],th:["จรวด บิน ไป บน ท้องฟ้า","ดวงดาว ส่องแสง ใน เวลา กลางคืน","นักบินอวกาศ สำรวจ ดาวเคราะห์"]},
+ {week:3,title:"Mixed language",level:"Confident",en:["Hello! วันนี้ is a happy day.","I can type ไทย and English.","My friend says สวัสดี!"],th:["Hello เพื่อน ของ ฉัน","วันนี้ I feel happy","ฉัน พิมพ์ English ได้"]},
+ {week:4,title:"Speed challenge",level:"Advanced",en:["Quick fingers type each word with care.","Practice helps my hands find every key.","I am getting faster and more accurate."],th:["ฉัน ฝึก พิมพ์ ให้ ถูกต้อง","นิ้วมือ ของฉัน เคลื่อนไหว อย่าง คล่องแคล่ว","ฉัน ทำได้ ดี มาก"]},
+ {week:4,title:"Story time",level:"Advanced",en:["A small rabbit hopped through a sunny garden.","It found a colorful butterfly resting on a flower.","They became friends and explored the garden."],th:["กระต่าย ตัวน้อย กระโดด ใน สวน","ผีเสื้อ สีสวย บิน มา เกาะ ดอกไม้","ทั้งสอง เป็น เพื่อน กัน และ เล่น อย่าง สนุกสนาน"]},
+ {week:4,title:"Typing champion",level:"Champion",en:["I am a typing champion! I can type with confidence, patience, and a big smile.","Every day I learn something new. My fingers are getting stronger and quicker.","I will keep practicing because learning is a wonderful adventure."],th:["ฉัน คือ แชมป์ นักพิมพ์ ฉัน พิมพ์ ได้ อย่าง มั่นใจ และ มี ความสุข","ทุก วัน ฉัน เรียนรู้ สิ่งใหม่ นิ้วมือ ของฉัน แข็งแรง และ คล่องแคล่ว ขึ้น","ฉัน จะ ฝึกฝน ต่อไป เพราะ การเรียนรู้ คือ การผจญภัย ที่ แสน วิเศษ"]}
+];
+const KEY="keykids_v1";
+const initial={completed:{},history:[],drafts:{},current:0,mode:"en"};
+let state=loadState(),currentLesson=null,startTime=0,timer=null,finished=false;
+function loadState(){try{return {...initial,...JSON.parse(localStorage.getItem(KEY)||"{}")}}catch(e){return {...initial}}}
+function save(){localStorage.setItem(KEY,JSON.stringify(state));renderStats();renderCurriculum();renderHistory();renderParent()}
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2200)}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function renderCurriculum(){
+ const root=document.getElementById("curriculum");root.innerHTML="";
+ for(let w=1;w<=4;w++){
+  const done=lessons.filter((l,i)=>l.week===w&&state.completed[i]).length;
+  const section=document.createElement("div");section.className="week";
+  section.innerHTML=`<div class="week-title"><span>Week ${w} ${["🌱","🌼","🚀","🏆"][w-1]}</span><span>${done}/3 completed</span></div><div class="lesson-grid"></div>`;
+  const grid=section.querySelector(".lesson-grid");
+  lessons.forEach((l,i)=>{if(l.week!==w)return;const c=state.completed[i];const b=document.createElement("button");b.className="lesson-card"+(c?" done":"")+(currentLesson===i?" active":"");b.innerHTML=`<div class="num">LESSON ${i+1} ${c?"✓":""}</div><div class="lesson-name">${esc(l.title)}</div><div class="lesson-meta">${esc(l.level)} · ${c?`⭐ ${c.stars}`:"10–15 min"}</div>`;b.addEventListener("click",()=>selectLesson(i));grid.appendChild(b)});
+  root.appendChild(section);
+ }
+}
+function renderStats(){
+ const done=Object.keys(state.completed).length;const entries=Object.values(state.completed);const stars=entries.reduce((a,x)=>a+(x.stars||0),0);
+ const best=entries.length?Math.max(...entries.map(x=>x.accuracy||0)):"—";
+ const days=new Set(state.history.map(x=>new Date(x.date).toDateString())).size;
+ document.getElementById("starsStat").textContent=stars;document.getElementById("doneStat").textContent=`${done}/12`;document.getElementById("accuracyStat").textContent=best==="—"?"—":best+"%";document.getElementById("daysStat").textContent=days;
+ const pct=Math.round(done/12*100);document.getElementById("coursePercent").textContent=pct+"%";document.getElementById("courseProgress").style.width=pct+"%";
+}
+function renderHistory(all=false){
+ const box=document.getElementById("historyList");const arr=[...state.history].reverse().slice(0,all?100:5);
+ if(!arr.length){box.innerHTML='<div class="empty">Your practice history will appear here. Start a lesson to begin!</div>';return}
+ box.innerHTML=arr.map(x=>`<div class="history-row"><div><div class="history-name">${esc(x.title)} · ${x.mode==="th"?"🇹🇭":"🇬🇧"}</div><div class="history-detail">${new Date(x.date).toLocaleDateString()} · ${x.minutes} min · ${x.speed} CPM</div></div><div class="score">${x.accuracy}% · ⭐${x.stars}</div></div>`).join("");
+}
+function renderParent(){
+ document.getElementById("parentSessions").textContent=state.history.length;
+ document.getElementById("parentMinutes").textContent=state.history.reduce((a,x)=>a+(x.minutes||0),0);
+ document.getElementById("parentAverage").textContent=state.history.length?Math.round(state.history.reduce((a,x)=>a+x.accuracy,0)/state.history.length)+"%":"—";
+}
+function selectLesson(i){
+ currentLesson=i;finished=false;state.current=i;const l=lessons[i];
+ document.getElementById("lessonHeading").textContent=`Lesson ${i+1}: ${l.title}`;
+ document.getElementById("lessonSub").textContent=`Week ${l.week} · ${l.level} · Choose English or Thai`;
+ document.getElementById("typingInput").disabled=false;document.getElementById("finishBtn").disabled=false;document.getElementById("resetBtn").disabled=false;document.getElementById("hintBtn").disabled=false;
+ document.getElementById("feedback").textContent="";
+ startExercise();renderCurriculum();save();
+}
+function target(){return lessons[currentLesson][state.mode][Math.min(lessons[currentLesson][state.mode].length-1,0)]}
+function getText(){return lessons[currentLesson][state.mode].join(" ")}
+function normalize(s){return s.normalize("NFC")}
+function startExercise(){
+ if(currentLesson===null)return;
+ const input=document.getElementById("typingInput");input.value=state.drafts[currentLesson+"_"+state.mode]||"";
+ startTime=Date.now();finished=false;clearInterval(timer);timer=setInterval(updateLive,500);
+ document.getElementById("englishTab").classList.toggle("active",state.mode==="en");document.getElementById("thaiTab").classList.toggle("active",state.mode==="th");
+ renderTarget();updateLive();input.focus();
+}
+function renderTarget(){
+ const expected=Array.from(normalize(getText()));const typed=Array.from(normalize(document.getElementById("typingInput").value));let out="";
+ expected.forEach((ch,i)=>{const cls=i<typed.length?(typed[i]===ch?"correct":"wrong"):"pending";out+=`<span class="${cls}">${esc(ch===" "?" ":ch)}</span>`});
+ document.getElementById("targetText").innerHTML=out;
+ const pct=Math.min(100,Math.round(typed.length/Math.max(1,expected.length)*100));document.getElementById("typingProgress").style.width=pct+"%";
+}
+function calc(){
+ const expected=Array.from(normalize(getText()));const typed=Array.from(normalize(document.getElementById("typingInput").value));
+ let correct=0;for(let i=0;i<Math.min(expected.length,typed.length);i++)if(expected[i]===typed[i])correct++;
+ const accuracy=typed.length?Math.round(correct/Math.max(expected.length,typed.length)*100):0;
+ const mins=Math.max((Date.now()-startTime)/60000,1/60);const cpm=Math.round(typed.length/mins);
+ return {accuracy,cpm,correct,typed:typed.length,minutes:Math.max(1,Math.round(mins))};
+}
+function updateLive(){
+ if(currentLesson===null||finished)return;const x=calc();
+ document.getElementById("liveStats").textContent=`Accuracy: ${x.accuracy}% · Speed: ${x.cpm} CPM · Time: ${formatTime(Date.now()-startTime)}`;
+}
+function formatTime(ms){const s=Math.floor(ms/1000);return `${Math.floor(s/60)}:${String(s%60).padStart(2,"0")}`}
+function switchMode(mode){
+ if(currentLesson===null){state.mode=mode;document.getElementById("englishTab").classList.toggle("active",mode==="en");document.getElementById("thaiTab").classList.toggle("active",mode==="th");return}
+ state.drafts[currentLesson+"_"+state.mode]=document.getElementById("typingInput").value;state.mode=mode;startExercise();save();
+}
+function finish(){
+ if(currentLesson===null||finished)return;
+ const expected=Array.from(normalize(getText()));const typed=Array.from(normalize(document.getElementById("typingInput").value));
+ if(!typed.length){document.getElementById("feedback").textContent="Type a little first, then finish your lesson. 💪";return}
+ finished=true;clearInterval(timer);const x=calc();const stars=x.accuracy>=98?3:x.accuracy>=90?2:1;const old=state.completed[currentLesson];const best=old?Math.max(old.accuracy,x.accuracy):x.accuracy;
+ state.completed[currentLesson]={accuracy:best,stars:Math.max(stars,old?.stars||0),date:new Date().toISOString()};
+ state.history.push({lesson:currentLesson,title:lessons[currentLesson].title,mode:state.mode,accuracy:x.accuracy,speed:x.cpm,minutes:x.minutes,stars,date:new Date().toISOString()});
+ delete state.drafts[currentLesson+"_"+state.mode];document.getElementById("feedback").textContent=`Amazing work! You earned ${stars} star${stars>1?"s":""}! ⭐`;
+ document.getElementById("typingInput").disabled=true;document.getElementById("finishBtn").disabled=true;save();
+ document.getElementById("resultTitle").textContent=stars===3?"Typing superstar!":stars===2?"Wonderful work!":"Great practice!";
+ document.getElementById("resultText").textContent=`You practiced ${lessons[currentLesson].title} with ${x.accuracy}% accuracy and ${x.cpm} characters per minute. You earned ${stars} star${stars>1?"s":""}. Keep going — practice makes progress!`;
+ document.getElementById("resultModal").classList.add("show");
+}
+function resetExercise(){if(currentLesson===null)return;document.getElementById("typingInput").value="";state.drafts[currentLesson+"_"+state.mode]="";startExercise();save()}
+document.getElementById("typingInput").addEventListener("input",e=>{
+ if(currentLesson===null||finished)return;
+ state.drafts[currentLesson+"_"+state.mode]=e.target.value;save();renderTarget();updateLive();
+ if(normalize(e.target.value)===normalize(getText()))document.getElementById("feedback").textContent="Perfect! Press Finish lesson to save your score. 🎉";
+ else document.getElementById("feedback").textContent="";
+});
+document.getElementById("englishTab").onclick=()=>switchMode("en");
+document.getElementById("thaiTab").onclick=()=>switchMode("th");
+document.getElementById("finishBtn").onclick=finish;
+document.getElementById("resetBtn").onclick=resetExercise;
+document.getElementById("hintBtn").onclick=()=>toast("Look carefully at the target text. You can do it! 💡");
+document.getElementById("closeResult").onclick=()=>document.getElementById("resultModal").classList.remove("show");
+document.getElementById("allHistoryBtn").onclick=()=>renderHistory(true);
+document.getElementById("parentBtn").onclick=()=>{document.getElementById("parentPanel").hidden=false;renderParent();document.getElementById("parentPanel").scrollIntoView({behavior:"smooth",block:"center"})};
+document.getElementById("hideParentBtn").onclick=()=>document.getElementById("parentPanel").hidden=true;
+document.getElementById("exportBtn").onclick=()=>{
+ const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="tt-typing-progress-backup.json";a.click();URL.revokeObjectURL(url);toast("Progress backup exported!");
+};
+document.getElementById("importBtn").onclick=()=>document.getElementById("importFile").click();
+document.getElementById("importFile").onchange=async e=>{
+ const f=e.target.files[0];if(!f)return;try{const data=JSON.parse(await f.text());if(!data.completed||!Array.isArray(data.history))throw new Error();state={...initial,...data};save();if(Number.isInteger(state.current)&&state.current>=0&&state.current<12)selectLesson(state.current);toast("Backup imported successfully!")}catch(err){toast("That backup file could not be read.")}e.target.value="";
+};
+document.getElementById("resetDataBtn").onclick=()=>{
+ if(confirm("Delete all TT Typing scores, history, and saved progress on this device? This cannot be undone.")){state={...initial};localStorage.removeItem(KEY);currentLesson=null;clearInterval(timer);document.getElementById("lessonHeading").textContent="Choose your first lesson!";document.getElementById("lessonSub").textContent="Complete a lesson to earn stars.";document.getElementById("typingInput").value="";document.getElementById("typingInput").disabled=true;document.getElementById("finishBtn").disabled=true;document.getElementById("resetBtn").disabled=true;document.getElementById("hintBtn").disabled=true;document.getElementById("targetText").textContent="Choose a lesson above to begin ✨";save();toast("Progress reset.")}};
+renderStats();renderCurriculum();renderHistory();renderParent();
+if(Number.isInteger(state.current)&&state.current>=0&&state.current<12&&state.drafts){selectLesson(state.current);document.getElementById("feedback").textContent="Welcome back! Your saved lesson is ready. 🌟"}
+</script>
+
+<style>
+.v2bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 14px}.v2bar select{padding:9px 12px;border:1px solid #e6eaf4;border-radius:10px;background:white;color:#25314d}
+.v2panel{background:#fff;border:1px solid #e6eaf4;border-radius:17px;padding:17px;margin-top:16px;box-shadow:0 12px 32px #34456f12}
+.v2keys{display:flex;gap:4px;justify-content:center;margin:5px 0}.v2key{flex:1;max-width:40px;text-align:center;padding:7px 2px;border-radius:7px;background:#f0f2fa;font-size:10px;font-weight:800;color:#53617b;border:1px solid #e1e5f0}.v2key small{display:block;color:#8a73dc;font-size:9px}.v2key.hot{outline:3px solid #ffc957;background:#fff7df}
+.v2badges{display:flex;gap:7px;flex-wrap:wrap}.v2badge{padding:8px 10px;background:#fff8e7;border:1px solid #ffebbb;border-radius:10px;font-size:11px;font-weight:800}.v2badge.lock{filter:grayscale(1);opacity:.4}
+.v2stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.v2stats div{background:#f7f8fd;padding:12px;border-radius:11px}.v2stats b{display:block;font-size:19px}.v2stats small{color:#77839b;font-size:10px}
+.v2field{display:grid;gap:5px;margin:10px 0}.v2field label{font-size:11px;color:#77839b;font-weight:800}.v2field input{padding:9px;border:1px solid #e6eaf4;border-radius:9px}
+@media(max-width:600px){.v2stats{grid-template-columns:repeat(2,1fr)}}
+@media print{body *{visibility:hidden!important}.v2report,.v2report *{visibility:visible!important}.v2report{display:block!important;position:absolute;left:0;top:0;width:100%;padding:24px}.v2hide{display:none!important}}
+</style>
+<div class="v2bar v2hide" id="v2ProfileBar">
+ <b style="font-size:12px;color:#77839b">LEARNER</b><select id="v2Profile"></select>
+ <button class="btn small" id="v2Add">＋ Add child</button>
+ <span class="small-text muted">Profiles save separately on this device.</span>
+</div>
+<section class="v2panel v2hide">
+ <div class="section-head"><h3>⌨️ Virtual keyboard coach</h3><span class="pill" id="v2Layout">QWERTY / Thai Kedmanee</span></div>
+ <div class="small-text muted">Use the highlighted key as a guide. Purple letters show a Thai keyboard legend.</div>
+ <div id="v2Keyboard" style="margin-top:10px"></div>
+</section>
+<section class="v2panel v2hide">
+ <div class="section-head"><h3>🏅 Achievement badges</h3><span class="pill" id="v2BadgeCount">0 earned</span></div>
+ <div class="v2badges" id="v2Badges"></div>
+</section>
+<section class="v2panel v2hide" id="v2Parent">
+ <div class="section-head"><h3>🔒 Parent dashboard</h3><button class="btn small" id="v2Close">Close</button></div>
+ <div class="v2stats">
+  <div><b id="v2Sessions">0</b><small>Practice sessions</small></div><div><b id="v2Minutes">0</b><small>Practice minutes</small></div>
+  <div><b id="v2Average">—</b><small>Average accuracy</small></div><div><b id="v2Mistakes">0</b><small>Mistakes recorded</small></div>
+ </div>
+ <div class="v2field"><label>DAILY PRACTICE REMINDER</label><label><input type="checkbox" id="v2Reminder"> Enable reminder</label><input type="time" id="v2Time" value="17:00"></div>
+ <div class="v2field"><label>SET OR CHANGE PARENT PIN (4–8 DIGITS)</label><input id="v2Pin" type="password" inputmode="numeric" maxlength="8" placeholder="Parent PIN"></div>
+ <div class="exercise-actions"><button class="btn primary" id="v2Save">Save settings</button><button class="btn" id="v2Notify">Enable notifications</button><button class="btn" id="v2Export">Export backup</button><button class="btn" id="v2Import">Import backup</button><button class="btn" id="v2Report">Print progress report</button><input type="file" id="v2File" accept="application/json" hidden></div>
+ <p class="small-text muted">Reminders are checked while this page is open. Browser notifications require permission. Child data and the PIN stay in this browser; they are not uploaded to a server.</p>
+</section>
+<section class="v2report" id="v2ReportPage" style="display:none">
+ <h1>TT Typing — Learning Progress Report</h1><p id="v2ReportName"></p><div id="v2ReportStats"></div><h3>Lesson progress</h3><div id="v2ReportLessons"></div><h3>Practice history</h3><div id="v2ReportHistory"></div>
+</section>
+<div class="modal-backdrop" id="v2PinModal"><div class="modal"><h2 id="v2PinHeading">Parent access</h2><p id="v2PinMessage">Enter your parent PIN.</p><input id="v2PinEntry" type="password" inputmode="numeric" maxlength="8" placeholder="4–8 digit PIN" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:10px"><div class="modal-actions"><button class="btn" id="v2PinCancel">Cancel</button><button class="btn primary" id="v2PinGo">Continue</button></div></div></div>
+<script>
+(function(){
+ const STORE="tt_typing_v2_profiles";
+ let profiles={};try{profiles=JSON.parse(localStorage.getItem(STORE)||"{}")}catch(e){}
+ let active="default",pin="",reminder=false,reminderTime="17:00",lastReminder="";
+ const originalSave=save;
+ function storeProfiles(){profiles[active]=JSON.parse(JSON.stringify(state));localStorage.setItem(STORE,JSON.stringify(profiles));localStorage.setItem("tt_typing_parent_settings",JSON.stringify({pin,reminder,reminderTime,lastReminder}));}
+ try{let s=JSON.parse(localStorage.getItem("tt_typing_parent_settings")||"{}");pin=s.pin||"";reminder=!!s.reminder;reminderTime=s.reminderTime||"17:00";lastReminder=s.lastReminder||""}catch(e){}
+ if(!profiles.default){profiles.default=JSON.parse(JSON.stringify(state));}
+ try{const saved=JSON.parse(localStorage.getItem(STORE)||"{}");profiles={...profiles,...saved};}catch(e){}
+ save=function(){originalSave();storeProfiles();};
+ function toast2(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2200)}
+ function fillProfiles(){let sel=document.getElementById("v2Profile");sel.innerHTML=Object.keys(profiles).map(k=>`<option value="${k}">${(profiles[k].childName|| (k==="default"?"Learner":k)).replace(/[<>&"]/g,"")}</option>`).join("");sel.value=active}
+ function switchProfile(k){storeProfiles();if(!profiles[k])return;active=k;state=JSON.parse(JSON.stringify(profiles[k]));currentLesson=null;fillProfiles();renderStats();renderCurriculum();renderHistory();renderParent();document.getElementById("lessonHeading").textContent="Choose your first lesson!";document.getElementById("lessonSub").textContent="Your selected learner's progress is ready.";document.getElementById("typingInput").value="";document.getElementById("typingInput").disabled=true;document.getElementById("targetText").textContent="Choose a lesson above to begin ✨";document.getElementById("finishBtn").disabled=true;document.getElementById("resetBtn").disabled=true;document.getElementById("hintBtn").disabled=true;renderBadges();renderKeyboard("");}
+ function renderBadges(){let count=Object.keys(state.completed).length,h=state.history||[],tests=[["🌟 First practice",h.length>=1],["🐣 3 lessons",count>=3],["🚀 Halfway hero",count>=6],["👑 Course champion",count>=12],["🎯 Accuracy ace",Object.values(state.completed).some(x=>x.accuracy>=98)],["🌏 Bilingual star",h.some(x=>x.mode==="en")&&h.some(x=>x.mode==="th")],["🔥 Practice explorer",new Set(h.map(x=>new Date(x.date).toDateString())).size>=5]];document.getElementById("v2BadgeCount").textContent=tests.filter(x=>x[1]).length+" earned";document.getElementById("v2Badges").innerHTML=tests.map(x=>`<span class="v2badge ${x[1]?"":"lock"}">${x[0]}</span>`).join("")}
+ function renderKeyboard(ch){let rows=["qwertyuiop","asdfghjkl","zxcvbnm"],thai=["ๆไำพะัีรนยบ","ฟหกดเ้่าสวง","ผปแอิืทมใฝ"];document.getElementById("v2Keyboard").innerHTML=rows.map((r,i)=>`<div class="v2keys">${Array.from(r).map((c,j)=>`<div class="v2key ${c===String(ch).toLowerCase()||thai[i][j]===ch?"hot":""}">${c}<small>${thai[i][j]||""}</small></div>`).join("")}</div>`).join("")+`<div class="v2keys"><div class="v2key" style="max-width:240px;flex:5">SPACE / เว้นวรรค</div></div>`;document.getElementById("v2Layout").textContent="English QWERTY · Thai Kedmanee"}
+ const oldSelect=selectLesson;selectLesson=function(i){oldSelect(i);renderBadges();renderKeyboard(lessons[i][state.mode][0][0]||"")};
+ const oldTarget=renderTarget;renderTarget=function(){oldTarget();if(currentLesson!==null){let s=Array.from(document.getElementById("typingInput").value);renderKeyboard(s.length?s[s.length-1]:lessons[currentLesson][state.mode][0][0])}};
+ const oldFinish=finish;finish=function(){oldFinish();renderBadges()};
+ function showParent(){document.getElementById("v2PinHeading").textContent=pin?"Parent access":"Create parent PIN";document.getElementById("v2PinMessage").textContent=pin?"Enter your parent PIN to open parent settings.":"Choose a 4–8 digit PIN to protect parent settings.";document.getElementById("v2PinEntry").value="";document.getElementById("v2PinModal").classList.add("show")}
+ document.getElementById("parentBtn").onclick=showParent;
+ document.getElementById("v2PinCancel").onclick=()=>document.getElementById("v2PinModal").classList.remove("show");
+ document.getElementById("v2PinGo").onclick=()=>{let v=document.getElementById("v2PinEntry").value;if(!pin){if(!/^\d{4,8}$/.test(v)){toast2("PIN must contain 4–8 digits.");return}pin=v;storeProfiles()}else if(v!==pin){toast2("Incorrect PIN.");return}document.getElementById("v2PinModal").classList.remove("show");document.getElementById("v2Parent").hidden=false;document.getElementById("v2Parent").scrollIntoView({behavior:"smooth"});updateParent()};
+ document.getElementById("v2Close").onclick=()=>document.getElementById("v2Parent").hidden=true;
+ function updateParent(){let h=state.history||[];document.getElementById("v2Sessions").textContent=h.length;document.getElementById("v2Minutes").textContent=h.reduce((a,x)=>a+(x.minutes||0),0);document.getElementById("v2Average").textContent=h.length?Math.round(h.reduce((a,x)=>a+x.accuracy,0)/h.length)+"%":"—";document.getElementById("v2Mistakes").textContent=h.reduce((a,x)=>a+(x.mistakes||0),0);document.getElementById("v2Reminder").checked=reminder;document.getElementById("v2Time").value=reminderTime}
+ document.getElementById("v2Save").onclick=()=>{reminder=document.getElementById("v2Reminder").checked;reminderTime=document.getElementById("v2Time").value;let v=document.getElementById("v2Pin").value;if(v){if(!/^\d{4,8}$/.test(v)){toast2("PIN must contain 4–8 digits.");return}pin=v;document.getElementById("v2Pin").value=""}storeProfiles();toast2("Parent settings saved.")};
+ document.getElementById("v2Notify").onclick=async()=>{if(!("Notification"in window)){toast2("Notifications are not supported.");return}let r=await Notification.requestPermission();toast2(r==="granted"?"Notifications enabled.":"Permission not granted.")};
+ document.getElementById("v2Export").onclick=()=>{storeProfiles();let blob=new Blob([JSON.stringify({profiles,active,settings:{pin,reminder,reminderTime}},null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="tt-typing-backup.json";a.click();URL.revokeObjectURL(url);toast2("Backup exported.")};
+ document.getElementById("v2Import").onclick=()=>document.getElementById("v2File").click();
+ document.getElementById("v2File").onchange=async e=>{try{let d=JSON.parse(await e.target.files[0].text());if(!d.profiles)throw Error();profiles=d.profiles;active=d.active||Object.keys(profiles)[0];state=JSON.parse(JSON.stringify(profiles[active]));pin=d.settings?.pin||"";reminder=!!d.settings?.reminder;reminderTime=d.settings?.reminderTime||"17:00";storeProfiles();fillProfiles();renderStats();renderCurriculum();renderHistory();renderBadges();updateParent();toast2("Backup imported.")}catch(x){toast2("Could not read backup file.")}e.target.value=""};
+ document.getElementById("v2Add").onclick=()=>{let n=prompt("Child's name or nickname?");if(!n||!n.trim())return;let k="learner_"+Date.now(),copy={completed:{},history:[],drafts:{},current:0,mode:"en",childName:n.trim()};profiles[k]=copy;storeProfiles();switchProfile(k);fillProfiles();toast2("New learner profile created.")};
+ document.getElementById("v2Profile").onchange=e=>switchProfile(e.target.value);
+ document.getElementById("v2Report").onclick=()=>{let h=state.history||[],name=state.childName||"Learner";document.getElementById("v2ReportName").textContent="Learner: "+name+" · Printed: "+new Date().toLocaleString();document.getElementById("v2ReportStats").textContent=`Lessons completed: ${Object.keys(state.completed).length}/12 · Sessions: ${h.length} · Total stars: ${Object.values(state.completed).reduce((a,x)=>a+(x.stars||0),0)}`;document.getElementById("v2ReportLessons").innerHTML="<ol>"+lessons.map((l,i)=>`<li>${l.title} — ${state.completed[i]?state.completed[i].accuracy+"% accuracy":"Not completed"}</li>`).join("")+"</ol>";document.getElementById("v2ReportHistory").innerHTML="<ol>"+h.map(x=>`<li>${new Date(x.date).toLocaleDateString()} — ${x.title}, ${x.accuracy}% accuracy, ${x.speed||0} CPM</li>`).join("")+"</ol>";document.getElementById("v2ReportPage").style.display="block";window.print();document.getElementById("v2ReportPage").style.display="none"};
+ function checkReminder(){if(!reminder)return;let d=new Date(),today=d.toDateString(),[hh,mm]=reminderTime.split(":").map(Number);if(d.getHours()===hh&&d.getMinutes()===mm&&lastReminder!==today){lastReminder=today;storeProfiles();if("Notification"in window&&Notification.permission==="granted")new Notification("TT Typing practice time! ⌨️",{body:"A little practice makes a big difference. Ready for a lesson?"});else toast2("⌨️ Time for a little TT Typing practice!")}}
+ setInterval(checkReminder,20000);
+ // Keep profile-specific state in sync after each normal application save.
+ const origRenderStats=renderStats;renderStats=function(){origRenderStats();renderBadges();updateParent()};
+ fillProfiles();renderBadges();renderKeyboard("");updateParent();
+})();
+</script>
+
+</body>
+</html>
